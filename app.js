@@ -14,3 +14,4 @@ manual approach (create package.json in the root, create propierties etc)
 npm init (step by step, press enter to skip)
 npm init -y (everything default)
 */
+console.log("Hello mom")
