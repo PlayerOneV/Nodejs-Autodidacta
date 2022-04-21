@@ -1,14 +1,19 @@
 const express = require('express') //iniciamos un objeto para utilizar express
+const personRoute = require('./routes/person') //Importamos la ruta de person.js
+const customerRoute = require('./routes/customer')
+const path = require('path')
+const bodyParser = require('body-parser')
 
 const app = express() //Creamos una "app"
+app.use(bodyParser.json())
 
-const personRoute = require('./routes/person') //Importamos la ruta de person.js
-const path = require('path')
 app.use((req, res, next) => {
-    console.log(`${new Date().toString()} => ${req.originalUrl}`)
+    console.log(`${new Date().toString()} => ${req.originalUrl}`, req.body)
     next()
 })
+
 app.use(personRoute) //Registramos la ruta
+app.use(customerRoute)
 app.use(express.static('public'))
 
 //Error 404 - Resource no found
