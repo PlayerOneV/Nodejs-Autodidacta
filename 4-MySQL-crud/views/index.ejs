@@ -16,7 +16,7 @@
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">Navbar</a>
+            <a class="navbar-brand" href="/">Home</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                 aria-label="Toggle navigation">
@@ -62,8 +62,8 @@
                             <%= user.rol %>
                         </td>
                         <td>
-                            <a href="/edit" class="btn btn-outline-info">edit</a>
-                            <a href="/delete" class="btn btn-outline-danger">edit</a>
+                            <a href="/edit/<%= user.id %>" class="btn btn-outline-info">edit</a>
+                            <a href="/delete/<%= user.id %>" class="btn btn-outline-danger">delete</a>
                         </td>
                     </tr>
                     <% }) %>
